@@ -1,5 +1,5 @@
 <template>
-      <tr class="table__row">
+      <tr class="table__row" @click="viewUserInForm">
         <td class="table__row-cell">{{user.id}}</td>
         <td class="table__row-cell">{{user._foreigner}}</td>
         <td class="table__row-cell">{{user._name}}</td>
@@ -9,7 +9,12 @@
 <script>
 export default {
   name: "TableRow",
-  props: ["user"]
+  props: ["user"],
+  methods: {
+      viewUserInForm() {
+          this.$emit("viewUserInForm", this.user.id)
+      }
+  }
 };
 </script>
 <style>

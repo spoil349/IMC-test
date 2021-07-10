@@ -1,6 +1,10 @@
 <template>
-      <Table/>
-      <FormData/>
+      <Table
+        @viewUserInForm="viewUserInForm"
+      />
+      <FormData
+        :user="selectedUser"
+      />
 </template>
 
 <script>
@@ -13,6 +17,16 @@ export default {
     Table,
     FormData
   },
+  data(){
+    return {
+      selectedUser: {}
+    }
+  },
+  methods: {
+    viewUserInForm(userToView) {
+      this.selectedUser = userToView;
+    }
+  }
 }
 </script>
 

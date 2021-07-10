@@ -1,11 +1,10 @@
 <template>
-    <p>FormData works</p>
+    <p>{{user.id}}</p>
 </template>
 <script>
 export default {
   name: "FormData",
-  
-
+  props: ["user"]
 };
 </script>
 <style>

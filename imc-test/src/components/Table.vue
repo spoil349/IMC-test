@@ -6,21 +6,17 @@
         <th class="table__row-header">Имя</th>
         <th class="table__row-header">Пол</th>
       </tr>
-      <!-- <tr class="table__row" v-for="user in users" :key="user.id">
-        <td class="table__row-cell">{{user.id}}</td>
-        <td class="table__row-cell">{{user._foreigner}}</td>
-        <td class="table__row-cell">{{user._name}}</td>
-        <td class="table__row-cell">{{user._sex}}</td>
-      </tr> -->
       <TableRow 
         v-for="user in users"
         :key="user.id"
         :user = user
+        @viewUserInForm = "viewUserInForm"
       />
     </table>
 </template>
 <script>
 import TableRow from "@/components/TableRow";
+import _ from "lodash";
 
 export default {
   name: "Table",
@@ -31,6 +27,12 @@ export default {
     return {
       users: []
     }
+  },
+  methods: {
+      viewUserInForm(id) {
+          let userToView = _.find(this.users, {id:id})
+          this.$emit("viewUserInForm", userToView);
+      }
   },
   async mounted() {
     const res = await fetch(
