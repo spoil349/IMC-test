@@ -1,16 +1,18 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+      <Table/>
+      <FormData/>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Table from "@/components/Table";
+import FormData from "@/components/FormData";
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
+    Table,
+    FormData
+  },
 }
 </script>
 
