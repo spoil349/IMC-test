@@ -18,9 +18,8 @@ export default {
 };
 </script>
 <style>
-  .table {
-    font-size: 14px;
-    border-collapse: collapse;
+  .table__row {
+    cursor: pointer;
   }
   .table__row-cell {
       background-color: #d8e6f3;
